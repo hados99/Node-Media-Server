@@ -1,5 +1,5 @@
 {
-  "name": "node-media-server",
+  "name": "@hados99/node-media-server",
   "version": "2.2.4",
   "description": "A Node.js implementation of RTMP Server",
   "main": "index.js",
@@ -8,19 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/illuspas/Node-Media-Server.git"
+    "url": "git+https://github.com/hados99/Node-Media-Server.git"
   },
   "keywords": [
     "rtmp",
     "flv",
-    "server"
+    "server",
+    "amf"
   ],
-  "author": "Mingliang Chen",
+  "author": "hados99",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/illuspas/Node-Media-Server/issues"
+    "url": "https://github.com/hados99/Node-Media-Server/issues"
   },
-  "homepage": "https://github.com/illuspas/Node-Media-Server#readme",
+  "homepage": "https://github.com/hados99/Node-Media-Server#readme",
   "dependencies": {
     "basic-auth-connect": "^1.0.0",
     "chalk": "^2.4.2",
