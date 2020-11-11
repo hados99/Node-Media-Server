@@ -647,6 +647,9 @@ class NodeRtmpClient {
   rtmpDataHandler() {
     let payload = this.parserPacket.payload.slice(0, this.parserPacket.header.length);
     this.launcher.emit('script', payload, this.parserPacket.clock);
+
+    let dataMessage = AMF.decodeAmf0Data(payload);
+    this.launcher.emit('amf', dataMessage, this.parserPacket.clock);
   }
 
   sendInvokeMessage(sid, opt) {
