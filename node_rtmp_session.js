@@ -762,6 +762,8 @@ class NodeRtmpSession {
     let offset = this.parserPacket.header.type === RTMP_TYPE_FLEX_STREAM ? 1 : 0;
     let payload = this.parserPacket.payload.slice(offset, this.parserPacket.header.length);
     let dataMessage = AMF.decodeAmf0Data(payload);
+    context.nodeEvent.emit('amf', this.id, this.publishStreamPath, dataMessage);
+
     switch (dataMessage.cmd) {
       case "@setDataFrame":
         if (dataMessage.dataObj) {

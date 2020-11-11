@@ -962,7 +962,7 @@ const rtmpCmdCode = {
   "pause": ["transId", "cmdObj", "pause", "ms"]
 };
 
-const rtmpDataCode = {
+let rtmpDataCode = {
   "@setDataFrame": ["method", "dataObj"],
   "onFI": ["info"],
   "onMetaData": ["dataObj"],
@@ -1110,6 +1110,12 @@ function encodeAMF3Cmd(opt) {
   return data
 }
 
+function addRtmpDataCodes(cmds) {
+  for (key in cmds) {
+    rtmpDataCode[key] = cmds[key];
+  }
+}
+
 module.exports = {
   decodeAmf3Cmd: decodeAMF3Cmd,
   encodeAmf3Cmd: encodeAMF3Cmd,
@@ -1182,5 +1188,7 @@ module.exports = {
   amf3encUI29: amf3encUI29,
   amf3encUndefined: amf3encUndefined,
   amf3encXml: amf3encXml,
-  amf3encXmlDoc: amf3encXmlDoc
+  amf3encXmlDoc: amf3encXmlDoc,
+  addRtmpDataCodes: addRtmpDataCodes,
+  rtmpDataCode: rtmpDataCode
 };
